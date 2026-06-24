@@ -1,0 +1,17 @@
+export const SEEDED_CLASSES = Object.freeze([
+  { name: "Nursery", displayName: "Nursery", code: "NURSERY", sortOrder: 1 },
+  { name: "LKG", displayName: "LKG", code: "LKG", sortOrder: 2 },
+  { name: "UKG", displayName: "UKG", code: "UKG", sortOrder: 3 },
+  { name: "1", displayName: "Class 1", code: "CLASS_1", sortOrder: 4 },
+  { name: "2", displayName: "Class 2", code: "CLASS_2", sortOrder: 5 },
+  { name: "3", displayName: "Class 3", code: "CLASS_3", sortOrder: 6 },
+  { name: "4", displayName: "Class 4", code: "CLASS_4", sortOrder: 7 },
+  { name: "5", displayName: "Class 5", code: "CLASS_5", sortOrder: 8 },
+  { name: "6", displayName: "Class 6", code: "CLASS_6", sortOrder: 9 },
+  { name: "7", displayName: "Class 7", code: "CLASS_7", sortOrder: 10 },
+  { name: "8", displayName: "Class 8", code: "CLASS_8", sortOrder: 11 },
+  { name: "9", displayName: "Class 9", code: "CLASS_9", sortOrder: 12 },
+  { name: "10", displayName: "Class 10", code: "CLASS_10", sortOrder: 13 },
+  { name: "11", displayName: "Class 11", code: "CLASS_11", sortOrder: 14 },
+  { name: "12", displayName: "Class 12", code: "CLASS_12", sortOrder: 15 },
+]);
