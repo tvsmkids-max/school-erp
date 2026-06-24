@@ -16,6 +16,9 @@ import StudentFieldConfigPage from "../features/studentFieldConfig/StudentFieldC
 import AttendancePage from "../features/attendance/AttendancePage.jsx";
 import AttendanceAnalyticsPage from "../features/attendance/AttendanceAnalyticsPage.jsx";
 import AttendanceReportsPage from "../features/attendance/AttendanceReportsPage.jsx";
+import AttendancePeriodReportsPage from "../features/attendance/AttendancePeriodReportsPage.jsx";
+
+import ReportsCenterPage from "../features/reports/ReportsCenterPage.jsx";
 
 import UsersPage from "../features/users/UsersPage.jsx";
 import RolesPage from "../features/roles/RolesPage.jsx";
@@ -24,7 +27,6 @@ import PermissionsPage from "../features/permissions/PermissionsPage.jsx";
 import AcademicSessionsPage from "../features/settings/academicSessions/AcademicSessionsPage.jsx";
 import ClassesPage from "../features/settings/classes/ClassesPage.jsx";
 import SectionsPage from "../features/settings/sections/SectionsPage.jsx";
-import AttendancePeriodReportsPage from "../features/attendance/AttendancePeriodReportsPage.jsx";
 
 import BackupsPage from "../features/backups/BackupsPage.jsx";
 
@@ -36,8 +38,7 @@ function ComingSoonPage({ title }) {
       </h1>
 
       <p className="mt-2 text-sm font-semibold text-slate-500">
-        This screen will be built after current student import and attendance
-        core is stable.
+        This module is reserved for a future upgrade.
       </p>
     </div>
   );
@@ -72,6 +73,7 @@ export const router = createBrowserRouter([
             path: "/backups",
             element: <BackupsPage />,
           },
+
           {
             element: <PermissionRoute permission="student.view" />,
             children: [
@@ -83,21 +85,21 @@ export const router = createBrowserRouter([
           },
 
           {
-            element: <PermissionRoute permission="student.promote" />,
-            children: [
-              {
-                path: "/student-promotion",
-                element: <ComingSoonPage title="Student Promotion" />,
-              },
-            ],
-          },
-
-          {
             element: <PermissionRoute permission="student_field_config.view" />,
             children: [
               {
                 path: "/student-field-config",
                 element: <StudentFieldConfigPage />,
+              },
+            ],
+          },
+
+          {
+            element: <PermissionRoute permission="student.promote" />,
+            children: [
+              {
+                path: "/student-promotion",
+                element: <ComingSoonPage title="Student Promotion" />,
               },
             ],
           },
@@ -120,6 +122,16 @@ export const router = createBrowserRouter([
               {
                 path: "/attendance/period-reports",
                 element: <AttendancePeriodReportsPage />,
+              },
+            ],
+          },
+
+          {
+            element: <PermissionRoute permission="student.view" />,
+            children: [
+              {
+                path: "/reports",
+                element: <ReportsCenterPage />,
               },
             ],
           },

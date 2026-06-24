@@ -80,6 +80,16 @@ export const MENU_REGISTRY = Object.freeze([
   },
 
   {
+    key: "reports-center",
+    label: "Reports Center",
+    path: "/reports",
+    icon: "FileSpreadsheet",
+    sortOrder: 60,
+    requiredAnyPermissions: ["student.view", "attendance.view"],
+    children: [],
+  },
+
+  {
     key: "user-management",
     label: "User Management",
     path: null,
@@ -113,6 +123,7 @@ export const MENU_REGISTRY = Object.freeze([
       },
     ],
   },
+
   {
     key: "backups",
     label: "Backups",
@@ -122,6 +133,7 @@ export const MENU_REGISTRY = Object.freeze([
     requiredAnyPermissions: ["dashboard.view"],
     children: [],
   },
+
   {
     key: "settings",
     label: "Settings",
