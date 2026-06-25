@@ -44,7 +44,6 @@ export const corsOptions = {
       return callback(null, true);
     }
 
-    // Allow Vercel preview deployments if needed
     if (isVercelPreviewUrl(normalizedOrigin)) {
       return callback(null, true);
     }

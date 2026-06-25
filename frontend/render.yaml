@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: school-erp-backend
+    env: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: DB_MODE
+        value: mongodb
+      - key: CLIENT_URL
+        value: https://school-erp-sigma-black.vercel.app
+      - key: JWT_ACCESS_EXPIRES_IN
+        value: 15m
+      - key: JWT_REFRESH_EXPIRES_IN
+        value: 7d
+      - key: COOKIE_SECURE
+        value: true
+      - key: COOKIE_SAME_SITE
+        value: none
+      - key: SEED_TENANT_NAME
+        value: THAKUR VIRENDRA SINGH MEMORIAL SCHOOL
+      - key: SEED_TENANT_CODE
+        value: TVSMS
+      - key: SEED_BRANCH_NAME
+        value: Main Branch
+      - key: SEED_BRANCH_CODE
+        value: MAIN
+      - key: SUPER_ADMIN_FULL_NAME
+        value: Super Admin
+      - key: SUPER_ADMIN_USERNAME
+        value: superadmin
+      - key: SUPER_ADMIN_EMAIL
+        value: admin@tvsmemorialschool.local
+      - key: SUPER_ADMIN_MOBILE
+        value: 9999999999
