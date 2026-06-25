@@ -6,8 +6,8 @@ import { loginApi } from "../../api/auth.api.js";
 import { authStore } from "./auth.store.js";
 
 export default function LoginPage() {
-  const [username, setUsername] = useState("superadmin");
-  const [password, setPassword] = useState("Admin@123");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
@@ -29,7 +29,11 @@ export default function LoginPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    loginMutation.mutate({ username, password });
+
+    loginMutation.mutate({
+      username: username.trim(),
+      password,
+    });
   };
 
   return (
@@ -49,17 +53,21 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4" autoComplete="off">
           <div>
             <label className="mb-2 block text-sm font-bold text-slate-700 dark:text-slate-200">
               Username
             </label>
 
             <input
+              name="erp_login_username_no_autofill"
+              autoComplete="off"
               value={username}
               onChange={(event) => setUsername(event.target.value)}
               className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:ring-blue-950"
               placeholder="Enter username"
+              spellCheck="false"
+              required
             />
           </div>
 
@@ -70,11 +78,14 @@ export default function LoginPage() {
 
             <div className="relative">
               <input
+                name="erp_login_password_no_autofill"
+                autoComplete="new-password"
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
                 className="w-full rounded-xl border border-slate-300 bg-white px-4 py-3 pr-12 text-sm outline-none transition focus:border-blue-500 focus:ring-4 focus:ring-blue-100 dark:border-slate-700 dark:bg-slate-950 dark:text-white dark:focus:ring-blue-950"
                 placeholder="Enter password"
+                required
               />
 
               <button
